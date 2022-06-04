@@ -1,6 +1,4 @@
 # Imports
-import re
-
 import graphene
 from flask import Flask
 from flask_graphql import GraphQLView
@@ -11,7 +9,8 @@ app = Flask(__name__)
 app.debug = True
 
 # Configs
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:9884@localhost:5432/bookstore'
+# Replace the user, password, hostname and database according to your configuration information
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@hostname:port/database_name'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
